@@ -1,4 +1,4 @@
-# RecieveHubtelMobileMoney
+# RecieveHubtelMobileMoney ![version](https://img.shields.io/badge/npm-v1.0.0-blue.svg)
 
 This is a handy unofficial nodejs package for Hubtel's Recieve Money API. This package will help you to `Recieve Mobile Money payments` from Users of all networks (mtn,voda,tigo,airtel)gh into your app/system.
 
@@ -6,6 +6,7 @@ Note:
 Kindly note that, this package does not work for any other hubtel payment service except Recieving Money from Users of your app. In short, this package will take care of `sending a mobile money prompt` to the users phone.
 
 ## Installation
+npm i --save @bigboblittle/hubtelmomo
 
 ## Setup
 

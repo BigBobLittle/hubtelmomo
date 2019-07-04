@@ -1,7 +1,7 @@
 {
   "name": "@bigboblittle/hubtelmomo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Receive hubtel payments on all networks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
     "mobile payments"
   ],
   "author": "BigBobLittle",
+  "repository": "BigBobLittle/hubtelmomo",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
