@@ -15,7 +15,7 @@ const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;
 
 
 
-username= "frimpong tachie evans";
+fullname= "frimpong tachie evans";
 phonenumber = "0543892565",
 amount = "1";
 
@@ -24,7 +24,7 @@ amount = "1";
 app.post('/test1', async(req,res,next) => {
   
     try {
-        let test  = await RecieveMobileMoney(username,phonenumber,amount, hubtelConfig);
+        let test  = await RecieveMobileMoney(fullname,phonenumber,amount, hubtelConfig);
         //console.log(me);
 
         /***

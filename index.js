@@ -1,7 +1,7 @@
 const shortID = require("shortid");
 const rp = require("request-promise");
 
-function RecieveMobileMoney(username, phonenumber, amount, config) {
+function RecieveMobileMoney(fullname, phonenumber, amount, config) {
   //phonenumber
   if (!phonenumber || phonenumber.length !== 10) {
     throw new Error(
@@ -10,14 +10,14 @@ function RecieveMobileMoney(username, phonenumber, amount, config) {
   }
 
   //check if all params are provided
-  if (!username || !phonenumber || !amount || !config) {
+  if (!fullname || !phonenumber || !amount || !config) {
     throw new Error(
-      `BOBLITTLE-RecieveMobileMoney:::\n Please provide all params {username,phonenumber,amount and config}`
+      `BOBLITTLE-RecieveMobileMoney:::\n Please provide all params {fullname,phonenumber,amount and config}`
     );
   }
 
-  //check if username is a string
-  if (typeof username !== "string") {
+  //check if fullname is a string
+  if (typeof fullname !== "string") {
     throw new Error(
       `BOBLITTLE-RecieveMobileMoney:::\n Momo Fullname must be of type string`
     );
@@ -84,7 +84,7 @@ function RecieveMobileMoney(username, phonenumber, amount, config) {
       config.merchantNumber
     }/receive/mobilemoney`,
     body: {
-      CustomerName: username,
+      CustomerName: fullname,
       CustomerMsisdn: phonenumber,
       FeesOnCustomer: false || config.FeesOnCustomer,
       Channel: network,

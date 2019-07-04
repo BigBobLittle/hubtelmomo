@@ -1,20 +1,34 @@
 {
-  "name": "hubtelmomo",
+  "name": "@bigboblittle/hubtelmomo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "hubtel momo",
+    "send hubtel momo prompt",
+    "simple hubtel mobile money",
+    "recieve mobile money ",
+    "recieve momo on all networks in ghana",
+    "hubtel",
+    "momo",
+    "send prompt",
+    "momo prompt",
+    "momo quick pay",
+    "big bob little",
+    "nodejs recieve mobile money",
+    "mobile payments"
+  ],
+  "author": "BigBobLittle",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "s": "^0.1.1",
+    
     "shortid": "^2.2.14"
   }
 }
