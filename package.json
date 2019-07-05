@@ -1,6 +1,6 @@
 {
   "name": "@bigboblittle/hubtelmomo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Receive hubtel payments on all networks",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,6 @@
     "express": "^4.17.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    
     "shortid": "^2.2.14"
   }
 }
