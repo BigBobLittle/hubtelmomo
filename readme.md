@@ -6,7 +6,10 @@ Note:
 Kindly note that, this package does not work for any other hubtel payment service except Recieving Money from Users of your app. In short, this package will take care of `sending a mobile money prompt` to the users phone.
 
 ## Installation
-npm i --save @bigboblittle/hubtelmomo
+```js
+`npm i --save @bigboblittle/hubtelmomo`
+
+```
 
 ## Setup
 
@@ -26,7 +29,7 @@ _Needed, but not required_
 **description**  
 A brief description of the transaction
 
-```
+```js
 const RecieveMobileMoney = require('../index').RecieveMobileMoney;
 
   const hubtelConfig = {
@@ -44,11 +47,13 @@ Please copy the above code and replace it with your own keys
 
 ## usage
 
+```js
 `RecieveMobileMoney(fullname,phonenumber,amount, hubtelConfig);`
+```
 
 ## Example using express js
 
-```
+```js
 const app = require('express')();
 const RecieveMobileMoney = require('../index').RecieveMobileMoney;
 const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;  //<---- i will talk about this later
@@ -89,11 +94,11 @@ The response codes are plenty, depending on which of their payment services you'
 i've taken care of  all response codes starting with **`2xxx` and few of `3xxx`**
 You may be interested in passing back those responses to your users. In such case, 
 you can add 
-
+```js
 `const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;`  //<---- i promised to talk about 
-
-Each hubtel response after every transaction has a  `ResponseCode` attached to it, so you can do something like this
 ```
+Each hubtel response after every transaction has a  `ResponseCode` attached to it, so you can do something like this
+```js
 app.post('/test1', async(req,res,next) => {
 
     try {
