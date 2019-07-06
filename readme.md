@@ -74,7 +74,7 @@ const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;  *//<--
 }
 
 fullname= "Big Bob Little";
-phonenumber = "0543892565",
+phonenumber = "0541234567",  *//always make sure the phonenumber is a 10 digit string
 amount = "1";
 
 
