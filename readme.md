@@ -16,18 +16,22 @@ Kindly note that, this package does not work for any other hubtel payment servic
 Please follow the official [Hubtel docs](https://developers.hubtel.com/docs) to get your API Keys, API secret and merchant Account Number
 
 _Required Fields_  
+```
 **fullname** -- fullname on user's mobile money wallet  
 **phonenumber** -- mobile money account phonenumber // must be a string of 10 digits  
 **amount** -- Amount of money to be deducted from users wallet  
 **merchantNumber** -- Your hubtel merchant number  
 **PrimaryCallbackUrl** Your primary callback url
-
+```
 _Needed, but not required_  
 **ClientReference**  
  a unique code on your end to identify each transaction. i've used [shortid](https://www.npmjs.com/package/shortid) to auto generate a unique code. you can leave it or replace this field with your own unique key to identify transaction
+**description**    
+A brief description of the transaction     
 
-**description**  
-A brief description of the transaction
+
+
+
 
 ```js
 const RecieveMobileMoney = require('../index').RecieveMobileMoney;
@@ -43,7 +47,7 @@ const RecieveMobileMoney = require('../index').RecieveMobileMoney;
 }
 ```
 
-Please copy the above code and replace it with your own keys
+Please copy the above code and replace it with your own keys, it's a good practice to `load them from your .env files`
 
 ## usage
 
