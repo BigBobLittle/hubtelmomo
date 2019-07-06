@@ -115,3 +115,9 @@ app.post('/test1', async(req,res,next) => {
 })
 
 ```
+
+## Custom Errors
+In order to differentiate the errors of this package from other development errors, i  preceeded all  errors return from this package with   
+`BOBLITTLE-RecieveMobileMoney:::`  
+followed by the error itself  
+`BOBLITTLE-RecieveMobileMoney:::\n Please provide all params {fullname,phonenumber,amount and config}`
