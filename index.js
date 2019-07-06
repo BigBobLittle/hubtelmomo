@@ -41,6 +41,16 @@ function RecieveMobileMoney(fullname, phonenumber, amount, config) {
     );
   }
 
+
+
+  //config options 
+  if(config){
+    if(!config.apiKey || !config.apiSecret || !config.PrimaryCallbackUrl ||!config.merchantNumber){
+      throw new Error(`BOBLITTLE-RecieveMobileMoney:::\n Please provide all required params to config, copy paste the config object from my github and replace with your own keys `);
+    }
+  }
+  
+
   //switch case to handle the network for momo options
   let network = phonenumber.slice(0, 3);
   switch (network) {

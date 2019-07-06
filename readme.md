@@ -55,8 +55,8 @@ Please copy the above code and replace it with your own keys
 
 ```js
 const app = require('express')();
-const RecieveMobileMoney = require('../index').RecieveMobileMoney;
-const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;  //<---- i will talk about this later
+const RecieveMobileMoney = require('../index').RecieveMobileMoney;   *//<-- require ('packagename').RecieveMobileMoney
+const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;  *//<---- i will talk about this later
 
 
   const hubtelConfig = {
