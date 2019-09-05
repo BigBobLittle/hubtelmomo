@@ -16,7 +16,7 @@ Kindly note that, this package does not work for any other hubtel payment servic
 Please follow the official [Hubtel docs](https://developers.hubtel.com/docs) to get your API Keys, API secret and merchant Account Number
 
 _Required Fields_  
-```
+```js
 **fullname** -- fullname on user's mobile money wallet  
 **phonenumber** -- mobile money account phonenumber // must be a string of 10 digits  
 **amount** -- Amount of money to be deducted from users wallet  
