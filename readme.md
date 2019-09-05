@@ -34,16 +34,16 @@ A brief description of the transaction
 
 
 ```js
-const RecieveMobileMoney = require('../index').RecieveMobileMoney;
+const RecieveMobileMoney = require('@bigboblittle/hubtelmomo').RecieveMobileMoney;
 
   const hubtelConfig = {
-    apiKey: "Your-Api-Key",
-    apiSecret: "Replace-With-Api-Secret",
+    apiKey: "replace with your API Id:",         
+    apiSecret: "replace with your API Key:",
     PrimaryCallbackUrl: "set your callback url, ",
     FeesOnCustomer: false , //i've set to false
-    merchantNumber: "HM..........",
+    merchantNumber: "Your Account ID",
     description: "Description of request", //not required
-   ClientReference: "Your-client-request" //i've used a package by name shortid to auto generate reference, u can override it here
+   ClientReference: "Your-Reference" //i've used a package by name shortid to auto generate reference, u can override it here
 }
 ```
 
@@ -59,18 +59,18 @@ Please copy the above code and replace it with your own keys, it's a good practi
 
 ```js
 const app = require('express')();
-const RecieveMobileMoney = require('../index').RecieveMobileMoney;   *//<-- require ('packagename').RecieveMobileMoney
-const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;  *//<---- i will talk about this later
+const RecieveMobileMoney = require('@bigboblittle/hubtelmomo').RecieveMobileMoney;   
+const ErrorCodes = require('@bigboblittle/hubtelmomo').mobileMoneyErorrCodesAndResponse;  *//<---- i will talk about this later
 
 
   const hubtelConfig = {
-    apiKey: "Your-Api-Key",
-    apiSecret: "Replace-With-Api-Secret",
+    apiKey: "replace with your API Id:",         
+    apiSecret: "replace with your API Key:",
     PrimaryCallbackUrl: "set your callback url, ",
     FeesOnCustomer: false , //i've set to false
-    merchantNumber: "HM..........",
+    merchantNumber: "Your Account ID",
     description: "Description of request", //not required
-   ClientReference: "Your-client-request" //i've used a package by name shortid to auto generate reference, u can override it here
+   ClientReference: "Your-reference-" //i've used a package by name shortid to auto generate reference, u can override it here
 }
 
 fullname= "Big Bob Little";
@@ -99,7 +99,7 @@ i've taken care of  all response codes starting with **`2xxx` and few of `3xxx`*
 You may be interested in passing back those responses to your users. In such case, 
 you can add 
 ```js
-`const ErrorCodes = require('../index').mobileMoneyErorrCodesAndResponse;`  //<---- i promised to talk about 
+`const ErrorCodes = require('@bigboblittle/hubtelmomo').mobileMoneyErorrCodesAndResponse;`   
 ```
 Each hubtel response after every transaction has a  `ResponseCode` attached to it, so you can do something like this
 ```js
