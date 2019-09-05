@@ -20,7 +20,7 @@ _Required Fields_
 **fullname** -- fullname on user's mobile money wallet  
 **phonenumber** -- mobile money account phonenumber // must be a string of 10 digits  
 **amount** -- Amount of money to be deducted from users wallet  
-**merchantNumber** -- Your hubtel merchant number  
+**merchantNumber** -- Your hubtel Account ID    //No longer 'HM......', its deprecated  
 **PrimaryCallbackUrl** Your primary callback url
 ```
 _Needed, but not required_  
