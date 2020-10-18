@@ -17,7 +17,7 @@ Please follow the official [Hubtel docs](https://developers.hubtel.com/docs) to 
 
 _Required Fields_  
 ```js
-**fullname** -- fullname on user's mobile money wallet  
+**fullname** -- fullname on users mobile money wallet  
 **phonenumber** -- mobile money account phonenumber // must be a string of 10 digits  
 **amount** -- Amount of money to be deducted from users wallet  
 **merchantNumber** -- Your hubtel Account ID    //No longer 'HM......', its deprecated  
@@ -34,7 +34,7 @@ A brief description of the transaction
 
 
 ```js
-const RecieveMobileMoney = require('@bigboblittle/hubtelmomo').RecieveMobileMoney;
+const {RecieveMobileMoney} = require('@bigboblittle/hubtelmomo');
 
   const hubtelConfig = {
     apiKey: "replace with your API Id:",         
@@ -59,8 +59,8 @@ Please copy the above code and replace it with your own keys, it's a good practi
 
 ```js
 const app = require('express')();
-const RecieveMobileMoney = require('@bigboblittle/hubtelmomo').RecieveMobileMoney;   
-const ErrorCodes = require('@bigboblittle/hubtelmomo').mobileMoneyErorrCodesAndResponse;  *//<---- i will talk about this later
+const {RecieveMobileMoney, mobileMoneyErorrCodesAndResponse} = require('@bigboblittle/hubtelmomo')  
+ 
 
 
   const hubtelConfig = {
@@ -73,15 +73,15 @@ const ErrorCodes = require('@bigboblittle/hubtelmomo').mobileMoneyErorrCodesAndR
    ClientReference: "Your-reference-" //i've used a package by name shortid to auto generate reference, u can override it here
 }
 
-fullname= "Big Bob Little";
-phonenumber = "0541234567",  *//always make sure the phonenumber is a 10 digit string
+const fullname= "Big Bob Little", 
+phonenumber = "0541234567",  *//always make sure the phonenumber is a 10 digit string, this is used by this package to identify which momo network
 amount = "1";
 
 
 app.post('/test1', async(req,res,next) => {
 
     try {
-        let test  = await RecieveMobileMoney(fullname,phonenumber,amount, hubtelConfig);
+        const test  = await RecieveMobileMoney(fullname,phonenumber,amount, hubtelConfig);
         console.log(test); // you'll get the response from hubtel here
        
     } catch (error) {
@@ -99,17 +99,17 @@ i've taken care of  all response codes starting with **`2xxx` and few of `3xxx`*
 You may be interested in passing back those responses to your users. In such case, 
 you can add 
 ```js
-`const ErrorCodes = require('@bigboblittle/hubtelmomo').mobileMoneyErorrCodesAndResponse;`   
+`const {mobileMoneyErorrCodesAndResponse} = require('@bigboblittle/hubtelmomo');`   
 ```
 Each hubtel response after every transaction has a  `ResponseCode` attached to it, so you can do something like this
 ```js
 app.post('/test1', async(req,res,next) => {
 
     try {
-        let test  = await RecieveMobileMoney(fullname,phonenumber,amount, hubtelConfig);
+        const test  = await RecieveMobileMoney(fullname,phonenumber,amount, hubtelConfig);
         console.log(test); // you'll get the response from hubtel here
          
-         let errorCodes = ErrorCodes(test.ResponseCode); *//<------- like this *
+         const errorCodes = mobileMoneyErorrCodesAndResponse(test.ResponseCode); *//<------- like this *
         res.json(errorCodes)                              *//<----- this will give you the a msg explaining the error code* 
        
     } catch (error) {
