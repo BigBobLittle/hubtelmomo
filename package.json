@@ -18,11 +18,16 @@
     "momo prompt",
     "momo quick pay",
     "big bob little",
+    "big bob little npm packages",
+    "big bob little open source projects",
     "nodejs recieve mobile money",
     "mobile payments"
   ],
   "author": "BigBobLittle",
   "repository": "BigBobLittle/hubtelmomo",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+},
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

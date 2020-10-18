@@ -52,12 +52,13 @@ function RecieveMobileMoney(fullname, phonenumber, amount, config) {
   
 
   //switch case to handle the network for momo options
-  let network = phonenumber.slice(0, 3);
+  const network = phonenumber.slice(0, 3);
   switch (network) {
     //?mtn
     case "054":
     case "024":
     case "055":
+      case "059":
       network = "mtn-gh";
       break;
 
@@ -84,11 +85,13 @@ function RecieveMobileMoney(fullname, phonenumber, amount, config) {
       break;
   }
 
-  let auth =
+  // generate the base 64 encoding of apikey:apiSecret
+  const auth =
     "Basic " +
     new Buffer.from(config.apiKey + ":" + config.apiSecret).toString("base64");
 
-  var options = {
+    // gather params to be sent to hubtel api 
+  const options = {
     method: "POST",
     uri: `https://api.hubtel.com/v1/merchantaccount/merchants/${
       config.merchantNumber
