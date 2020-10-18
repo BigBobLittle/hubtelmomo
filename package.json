@@ -1,6 +1,6 @@
 {
   "name": "@bigboblittle/hubtelmomo",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Receive hubtel payments on all networks",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "repository": "BigBobLittle/hubtelmomo",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-},
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
